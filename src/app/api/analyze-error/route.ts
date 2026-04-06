@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
+import type { ContentBlockParam } from "@anthropic-ai/sdk/resources/messages";
 import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 import { getAuthenticatedUserFromRequest } from "@/lib/server/auth";
 import { buildAttachmentContext } from "@/lib/server/attachments";
-import { runStructuredChatCompletion } from "@/lib/server/openai";
+import { runStructuredChatCompletion } from "@/lib/server/anthropic";
 import type { QuestionAnalysis } from "@/lib/analysis";
 
 export const runtime = "nodejs";
@@ -107,7 +108,7 @@ export async function POST(request: NextRequest) {
       attachmentMimeType: body.attachmentMimeType,
     });
 
-    const contentBlocks = [
+    const contentBlocks: ContentBlockParam[] = [
       {
         type: "text",
         text: [
@@ -174,7 +175,7 @@ export async function POST(request: NextRequest) {
         wrong_options_explanations: analysis.wrong_options_explanations,
         similar_question: analysis.similar_question,
         ai_analysis: analysis,
-        ai_model: process.env.OPENAI_MODEL || "gpt-4.1-mini",
+        ai_model: process.env.ANTHROPIC_MODEL || "claude-sonnet-4-20250514",
         last_analyzed_at: new Date().toISOString(),
       })
       .select()

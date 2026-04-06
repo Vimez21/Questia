@@ -13,8 +13,8 @@ Adicionar em Production, Preview e Development:
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
-- `OPENAI_API_KEY`
-- `OPENAI_MODEL`
+- `ANTHROPIC_API_KEY`
+- `ANTHROPIC_MODEL`
 
 ## 3. Supabase Auth
 
@@ -49,7 +49,7 @@ Adicionar em Production, Preview e Development:
 
 ## 6. Observacoes de seguranca
 
-- Nunca expor `OPENAI_API_KEY` no client
+- Nunca expor `ANTHROPIC_API_KEY` no client
 - Nunca usar `SUPABASE_SERVICE_ROLE_KEY` no browser
 - Manter bucket de anexos privado
 - Usar apenas URLs assinadas para leitura de arquivos

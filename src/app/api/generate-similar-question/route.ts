@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 import { getAuthenticatedUserFromRequest } from "@/lib/server/auth";
-import { runStructuredChatCompletion } from "@/lib/server/openai";
+import { runStructuredChatCompletion } from "@/lib/server/anthropic";
 import type { SimilarQuestion } from "@/lib/analysis";
 
 export const runtime = "nodejs";

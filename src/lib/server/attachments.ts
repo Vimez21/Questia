@@ -1,8 +1,9 @@
+import type { ContentBlockParam } from "@anthropic-ai/sdk/resources/messages";
 import { PDFParse } from "pdf-parse";
 import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 
 export type AttachmentContext = {
-  promptParts: Array<Record<string, unknown>>;
+  promptParts: ContentBlockParam[];
   extractedText: string | null;
 };
 
@@ -41,9 +42,11 @@ export async function buildAttachmentContext({
     return {
       promptParts: [
         {
-          type: "image_url",
-          image_url: {
-            url: `data:${mimeType};base64,${base64}`,
+          type: "image",
+          source: {
+            type: "base64",
+            media_type: mimeType as "image/jpeg" | "image/png" | "image/webp" | "image/gif",
+            data: base64,
           },
         },
       ],

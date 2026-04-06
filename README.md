@@ -9,7 +9,7 @@ Aplicacao Next.js 15 com Supabase e backend seguro para IA focada em analise de 
 - TypeScript
 - Tailwind CSS + shadcn/ui
 - Supabase Auth, Database e Storage
-- OpenAI via `app/api`
+- Anthropic Claude via `app/api`
 
 ## O que esta pronto
 
@@ -33,8 +33,8 @@ Copie `.env.example` para `.env.local` e preencha:
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
-OPENAI_API_KEY=
-OPENAI_MODEL=gpt-4.1-mini
+ANTHROPIC_API_KEY=
+ANTHROPIC_MODEL=claude-sonnet-4-20250514
 ```
 
 ## Setup local
@@ -124,5 +124,5 @@ Checklist completo:
 
 - As tabelas antigas foram reaproveitadas e expandidas para reduzir risco de quebrar UI.
 - O bucket novo recomendado e `question-files`, privado e protegido por RLS.
-- A chave da OpenAI nunca deve ir para o client.
+- A chave da Anthropic nunca deve ir para o client.
 - As APIs de IA foram fixadas em runtime Node para compatibilidade com PDF e chamadas backend na Vercel.
