@@ -5471,7 +5471,7 @@
     var ex = document.getElementById('food-detail-modal'); if (ex) ex.remove();
     var modal = document.createElement('div'); modal.id = 'food-detail-modal';
     modal.className = 'nm-dark';
-    modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);display:flex;flex-direction:column;';
+    modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:var(--nm-bg-deep);display:flex;flex-direction:column;';
     modal.innerHTML = '<div style="flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.08);"><p style="font-size:16px;font-weight:600;color:#F0F2F5;">' + title + '</p><button onclick="document.getElementById(\'food-detail-modal\').remove()" style="background:rgba(255,255,255,.1);border:none;color:#F0F2F5;font-size:18px;cursor:pointer;border-radius:6px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;">×</button></div><div style="flex:1;overflow-y:auto;padding:14px 16px;">' + totalsHtml + mealsHtml + '</div>';
     document.body.appendChild(modal);
   }
@@ -6108,7 +6108,7 @@
     var modal = document.createElement('div');
     modal.id = 'bio-ocr-modal';
     modal.className = 'nm-dark';
-    modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);display:flex;flex-direction:column;';
+    modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:var(--nm-bg-deep);display:flex;flex-direction:column;';
     modal.innerHTML = [
       '<div style="flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.08);">',
         '<p style="font-size:16px;font-weight:600;color:#F0F2F5;">Importar Bioimpedância</p>',
